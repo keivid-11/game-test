@@ -4,6 +4,7 @@
 
 import pygame
 import renderer as _renderer
+from audio import correct_sound, wrong_sound
 from renderer import (blit_text, blit_text_center, draw_rect_border,
                       render_dialog_bg, render_dark_overlay)
 from data import C, COLS, ROWS, TILE
