@@ -11,6 +11,7 @@ import sys
 import math
 import pygame
 
+from audio import load_audio, MUSIC_PATH
 from data      import (TILE, COLS, ROWS, FLOORS, BOOKS,
                        DOOR_COLS, ROOM_RANGES, C, build_floor_map)
 from hashmap   import HashMap
@@ -312,10 +313,10 @@ def draw_splash(surf, tick):
 def main():
     pygame.init()
     pygame.mixer.init()
+
+    sounds = load_audio()
   
-    pygame.mixer.music.load(
-    "assets/sounds/corridor_ambient.mp3"
-    )
+    pygame.mixer.music.load(MUSIC_PATH)
     pygame.mixer.music.set_volume(0.3)
     pygame.mixer.music.play(-1)
     info = pygame.display.Info()
