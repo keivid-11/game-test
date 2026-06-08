@@ -358,8 +358,7 @@ def main():
 
                 # Splash → jogo
                 if gs.screen_mode == "splash":
-                    if event.key in (pygame.K_RETURN, pygame.K_SPACE):
-                        pygame.mixer.music.play(-1)
+                    if event.key in (pygame.K_RETURN, pygame.K_SPACE):               
                         gs.screen_mode = "game"
                         gs.load_floor(0)
                         dlg.notify(f"Bem-vindo ao 1 Andar! Clique para mover.", C["player"], 240)
