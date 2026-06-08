@@ -311,6 +311,13 @@ def draw_splash(surf, tick):
 
 def main():
     pygame.init()
+    pygame.mixer.init()
+  
+    pygame.mixer.music.load(
+    "assets/sounds/corridor_ambient.mp3"
+    )
+    pygame.mixer.music.set_volume(0.3)
+    pygame.mixer.music.play(-1)
     info = pygame.display.Info()
     screen = pygame.display.set_mode(
         (info.current_w, info.current_h), pygame.FULLSCREEN
@@ -354,6 +361,7 @@ def main():
                 # Splash → jogo
                 if gs.screen_mode == "splash":
                     if event.key in (pygame.K_RETURN, pygame.K_SPACE):
+                        pygame.mixer.music.play(-1)
                         gs.screen_mode = "game"
                         gs.load_floor(0)
                         dlg.notify(f"Bem-vindo ao 1 Andar! Clique para mover.", C["player"], 240)
